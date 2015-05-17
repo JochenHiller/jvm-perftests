@@ -6,7 +6,7 @@ These results have been measured until now.
 
 | Date/User | OS/JavaVM | ops/m | Results |
 | --------- | --------- | ----- | ------- |
-| 2015-05-17/jochenhiller | 212.5 ops/m | mac-javase8-u45-64bit-server | [./results/mac-javase8-u45-64bit-server](./results/mac-javase8-u45-64bit-server) |
+| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | 212.5 ops/m | [./results/mac-javase8-u45-64bit-server](./results/mac-javase8-u45-64bit-server) |
 
 ## Run the tests
 
