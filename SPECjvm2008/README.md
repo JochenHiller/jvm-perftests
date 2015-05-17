@@ -6,7 +6,23 @@ These results have been measured until now.
 
 | Date/User | OS/JavaVM | Results |
 | ---- | ----------| ------- |
-| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | [./mac-javase8-u45-64bit-server](./results/mac-javase8-u45-64bit-server) |
+| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | [./results/mac-javase8-u45-64bit-server](./results/mac-javase8-u45-64bit-server) |
+
+## Run the tests
+
+Download scripts to install and run the tests on your target platform.
+
+```
+curl -s -o install.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/SPECjvm2008/install.sh
+curl -s -o run.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/SPECjvm2008/run.sh
+curl -s -o benchmark.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/SPECjvm2008/benchmark.sh
+chmod u+x *.sh
+# adapt benchmark.sh to your environment, then run the benchmarks
+./benchmark.sh
+# see results at ./specjvm2008/results
+```
+
+## Details 
 
 ## Installation
 
