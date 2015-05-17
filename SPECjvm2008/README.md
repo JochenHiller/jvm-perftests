@@ -4,9 +4,9 @@
 
 These results have been measured until now.
 
-| Date/User | OS/JavaVM | Results |
-| ---- | ----------| ------- |
-| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | [./results/mac-javase8-u45-64bit-server](./results/mac-javase8-u45-64bit-server) |
+| Date/User | OS/JavaVM | ops/m | Results |
+| --------- | --------- | ----- | ------- |
+| 2015-05-17/jochenhiller | 212.5 ops/m | mac-javase8-u45-64bit-server | [./results/mac-javase8-u45-64bit-server](./results/mac-javase8-u45-64bit-server) |
 
 ## Run the tests
 
@@ -18,13 +18,16 @@ curl -s -o run.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/m
 curl -s -o benchmark.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/SPECjvm2008/benchmark.sh
 chmod u+x *.sh
 # adapt benchmark.sh to your environment, then run the benchmarks
+# adapt means:
+#   set JAVA_HOME
+#   adapt memory settings, number of runs
 ./benchmark.sh
 # see results at ./specjvm2008/results
 ```
 
 ## Details 
 
-## Installation
+### Installation
 
 SPECjvm2008 can be downloaded from http://spec.org/jvm2008. It has to be installed on target platform and can run then the benchmarks.
 
@@ -41,7 +44,7 @@ java -jar SPECjvm2008.jar -wt 5s -it 5s -bt 2 compress
 cd ..
 ```
 
-## Running benchmark
+### Running benchmark
 
 As of now, the SPECjvm2008 benchmarks "startup.compiler.sunflow,compiler.sunflow" are NOT running wth JavaSE 8. See https://groups.google.com/forum/#!topic/adopt-openjdk/VOHTJTMfGWM.
 
@@ -50,7 +53,8 @@ So these tests "startup.compiler.sunflow,compiler.sunflow" have to be taken out 
 Note:
 * Running the benchmark from another folder than installation folder did *NOT* work as described in http://spec.org/jvm2008/docs/FAQ.html#Q3.6
 * Putting the results in another folder did *NOT* work as described in http://spec.org/jvm2008/docs/UserGuide.html#RunningTheBenchmark
-
+* "derby" test needs on Raspberry Pi at least 400m heap memory (-Xmx400m)
+* "scimark.fft.large" test needs on Raspberry Pi at least 600m heap memory (-Xmx600m)
 
 Script to run one benchmark: [./run.sh](./run.sh)
 ```
@@ -58,7 +62,7 @@ cd specjvm2008
 # runs ALL tests
 # java -jar SPECjvm2008.jar
 # run only tests for JavaSE 8
-java -jar SPECjvm2008.jar startup.helloworld startup.compiler.compiler  startup.compress startup.crypto.aes startup.crypto.rsa startup.crypto.signverify startup.mpegaudio startup.scimark.fft startup.scimark.lu startup.scimark.monte_carlo startup.scimark.sor startup.scimark.sparse startup.serial startup.sunflow startup.xml.transform startup.xml.validation compiler.compiler compress crypto.aes crypto.rsa crypto.signverify derby mpegaudio scimark.fft.large scimark.lu.large scimark.sor.large scimark.sparse.large scimark.fft.small scimark.lu.small scimark.sor.small scimark.sparse.small scimark.monte_carlo serial sunflow xml.transform xml.validation
+java -Xmx600m -jar SPECjvm2008.jar startup.helloworld startup.compiler.compiler  startup.compress startup.crypto.aes startup.crypto.rsa startup.crypto.signverify startup.mpegaudio startup.scimark.fft startup.scimark.lu startup.scimark.monte_carlo startup.scimark.sor startup.scimark.sparse startup.serial startup.sunflow startup.xml.transform startup.xml.validation compiler.compiler compress crypto.aes crypto.rsa crypto.signverify derby mpegaudio scimark.fft.large scimark.lu.large scimark.sor.large scimark.sparse.large scimark.fft.small scimark.lu.small scimark.sor.small scimark.sparse.small scimark.monte_carlo serial sunflow xml.transform xml.validation
 cd ..
 ```
 
@@ -77,6 +81,13 @@ These considerations have to be known when running the benchmark suite on MacOSX
 * The whole test run needs up to 2 hours
 
 ### Raspberry Pi
+
+Note:
+* install dos2unix package for fixing scripts
+
+```
+sudo apt-get install dos2unix
+```
 
 TODO
 
