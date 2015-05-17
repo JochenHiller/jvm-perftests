@@ -6,7 +6,7 @@ These results have been measured until now.
 
 | Date/User | OS/JavaVM | Results |
 | ---- | ----------| ------- |
-| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | [./mac-javase8-u45-64bit-server/SPECjvm2008.007.html](./mac-javase8-u45-64bit-server/SPECjvm2008.007.html) |
+| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | [./mac-javase8-u45-64bit-server](./mac-javase8-u45-64bit-server) |
 
 ## Installation
 
