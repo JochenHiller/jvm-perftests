@@ -1,0 +1,10 @@
+Report:      SPECjvm2008 Base summary
+Result:      Noncompliant composite result: 212.5 ops/m
+HW Model:    n/a, n/a
+HW CPU:      n/a, n/a
+OS:          Mac OS X
+JVM:         Oracle Corporation, Java HotSpot(TM) 64-Bit Server VM, 25.45-b02 mixed mode
+JVM tuning:  n/a
+JVM startup:  
+Tester:      jhiller, n/a
+Run date:    Sat May 16 23:06:43 CEST 2015
