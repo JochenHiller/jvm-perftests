@@ -6,13 +6,13 @@ These results have been measured until now.
 
 | Date/User | OS/JavaVM | Results |
 | ---- | ----------| ------- |
-| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | <./mac-javase8-u45-64bit-server/SPECjvm2008.007.html>  |
+| 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | [./mac-javase8-u45-64bit-server/SPECjvm2008.007.html](./mac-javase8-u45-64bit-server/SPECjvm2008.007.html) |
 
 ## Installation
 
 SPECjvm2008 can be downloaded from http://spec.org/jvm2008. It has to be installed on target platform and can run then the benchmarks.
 
-Script to install the benchmark suite: <./install.sh>
+Script to install the benchmark suite: [./install.sh](./install.sh)
 ```
 curl -s -o SPECjvm2008_1_01_setup.jar http://spec.cs.miami.edu/downloads/osg/java/SPECjvm2008_1_01_setup.jar
 export SPECJVM_HOME=`pwd`/specjvm2008
@@ -36,7 +36,7 @@ Note:
 * Putting the results in another folder did *NOT* work as described in http://spec.org/jvm2008/docs/UserGuide.html#RunningTheBenchmark
 
 
-Script to run one benchmark: <./run.sh>
+Script to run one benchmark: [./run.sh](./run.sh)
 ```
 cd specjvm2008
 # runs ALL tests
@@ -46,7 +46,7 @@ java -jar SPECjvm2008.jar startup.helloworld startup.compiler.compiler  startup.
 cd ..
 ```
 
-There is a script to run the whole benchmark suite for different JavaVMs: <./benchmark.sh>
+There is a script to run the whole benchmark suite for different JavaVMs: [./benchmark.sh](./benchmark.sh)
 
 This script has to be adapted to your specific settings for JavaVM installation, versions etc.
 

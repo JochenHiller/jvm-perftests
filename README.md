@@ -31,7 +31,7 @@ Available micro benchmarks found:
 
 ## Running tests with SPECjvm2008
 
-See <./SPECjvm2008/README.md>
+See [./SPECjvm2008/README.md](./SPECjvm2008/README.md)
 
 ## References
 
