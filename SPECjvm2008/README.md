@@ -7,7 +7,7 @@ These results have been measured until now.
 | Date/User | OS/JavaVM | ops/m | Results |
 | --------- | --------- | ----- | ------- |
 | 2015-05-17/jochenhiller | mac-javase8-u45-64bit-server | 212.5 ops/m | [./results/mac-javase8-u45-64bit-server](./results/mac-javase8-u45-64bit-server) |
-| 2015-05-18/jochenhiller | linux-jdk-8-oracle-arm-vfp-hflt-32bit-client | 6.64 ops/m | [./results/linux-jdk-8-oracle-arm-vfp-hflt-32bit-client](./results/linux-jdk-8-oracle-arm-vfp-hflt-32bit-client) |
+| 2015-05-18/jochenhiller | linux-jdk-8-oracle-arm-vfp-hflt-32bit-client | 6.64 ops/m | [./results/raspi2-linux-jdk-8-oracle-arm-vfp-hflt-32bit-client](./results/raspi2-linux-jdk-8-oracle-arm-vfp-hflt-32bit-client) |
 
 ## Run the tests
 
