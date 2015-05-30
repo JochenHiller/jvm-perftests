@@ -1,0 +1,12 @@
+Test running at Sat May 30 15:12:09 CEST 2015
+Darwin jhillers-MBP.fritz.box 14.3.0 Darwin Kernel Version 14.3.0: Mon Mar 23 11:59:05 PDT 2015; root:xnu-2782.20.48~5/RELEASE_X86_64 x86_64
+Intel(R) Core(TM) i7-3720QM CPU @ 2.60GHz
+java version "1.6.0_37"
+Java(TM) SE Runtime Environment (build 1.6.0_37-b06-434)
+Java HotSpot(TM) 64-Bit Server VM (build 20.12-b01-434, mixed mode)
+Making 5 runs
+Startup took 14012 ms
+Startup took 13634 ms
+Startup took 13761 ms
+Startup took 13425 ms
+Startup took 13646 ms

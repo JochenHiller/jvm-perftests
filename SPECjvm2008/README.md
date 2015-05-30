@@ -16,7 +16,7 @@ Download scripts to install and run the tests on your target platform.
 ```
 curl -s -o install.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/SPECjvm2008/install.sh
 curl -s -o run.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/SPECjvm2008/run.sh
-curl -s -o benchmark.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/SPECjvm2008/benchmark.sh
+curl -s -o benchmark.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/scripts-common/benchmark.sh
 chmod u+x *.sh
 # adapt benchmark.sh to your environment, then run the benchmarks
 # adapt means:

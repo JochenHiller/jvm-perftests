@@ -22,7 +22,7 @@ $JAVA_HOME/bin/java -version 2>>$TEST_RESULT_FILE
 
 
 # repeat test N times
-NO_OF_RUNS=2
+NO_OF_RUNS=5
 RUN=1
 echo "Making $NO_OF_RUNS runs" >>$TEST_RESULT_FILE
 while [ $RUN -le $NO_OF_RUNS ] ; do
