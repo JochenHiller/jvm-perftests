@@ -8,6 +8,12 @@ rm -f console.log
 echo "Installing JavaVMs..."
 echo "Assuming all downloaded files at ./JavaVMs, install into ./JavaVMs-Installed"
 
+if [ -z $JAVA_HOME ] ; then
+  echo "Set JAVA_HOME first to create JavaSE 8 profiles!"
+  exit 1
+fi
+
+
 ls -al JavaVMs
 mkdir -p JavaVMs-Installed
 cd JavaVMs-Installed
@@ -15,7 +21,7 @@ cd JavaVMs-Installed
 for jvm in ../JavaVMs/*.gz ; do
   full_jre_name=`echo -n $jvm | sed -e 's/^.*\///g' | sed -e 's/\.gz//g'`
   # echo $full_jre_name
-  gzcat $jvm | tar xf -
+  zcat $jvm | tar xf -
   echo "Installed JavaVMs-Installed/$full_jre_name"
   # rename default folder to specific VM name, do that for ejre, ejdk, jdk
   if [ -d ej??1.?.?_?? ] ; then

@@ -7,7 +7,7 @@ Get one or more JavaSE Embedded 7 or 8 versions from http://www.oracle.com/techn
 Copy the folder ./JavaVMs to you target platform, e.g. Raspberry Pi.
 
 ```
-scp JavaVMs/* pi@192.168.0.84:/home/pi/jvm-perftest/JavaVMs
+scp JavaVMs/* pi@<ip>:/home/pi/jvm-perftest/JavaVMs
 ```
 
 ## Install on target platform
