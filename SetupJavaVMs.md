@@ -12,15 +12,17 @@ scp JavaVMs/* pi@<ip>:/home/pi/jvm-perftest/JavaVMs
 
 ## Install on target platform
 
-There is a helper script to install all JavaVM in folder ./JavaVMs on target platform.
+There is a helper script to install all JavaVM in folder ./JavaVMs on target platform. Set JAVA_HOME to an existing installation of JavaSE 7 or 8 (will be needed to create jre-full profile).
 
 ```
+export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
 curl -s -o install-jvms.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/scripts-common/install-jvms.sh
 chmod u+x *.sh
+./install-jvms.sh
 ```
 
-For JavaSE Embedded 7 it will simply be unpacked.
-For JavaSE Embedded 8 it will use jrecreate.sh to create a full-jre profile. The install folder will be the name of the VM extended by "-jre-full".
+For JavaSE Embedded 7 the archive file will simply be unpacked.
+For JavaSE Embedded 8 the archive file will be unpacked. The jrecreate.sh will be used to create a full-jre profile. The install folder will be the name of the VM extended by "-jre-full".
 
 ## Use in benchmark tests
 

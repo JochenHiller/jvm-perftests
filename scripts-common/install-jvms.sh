@@ -21,7 +21,9 @@ cd JavaVMs-Installed
 for jvm in ../JavaVMs/*.gz ; do
   full_jre_name=`echo -n $jvm | sed -e 's/^.*\///g' | sed -e 's/\.gz//g'`
   # echo $full_jre_name
-  zcat $jvm | tar xf -
+  ZCAT_COMMAND=zcat
+  if [ `uname` == Darwin ] ; then ZCAT_COMMAND=gzcat ; fi
+  $ZCAT_COMMAND $jvm | tar xf -
   echo "Installed JavaVMs-Installed/$full_jre_name"
   # rename default folder to specific VM name, do that for ejre, ejdk, jdk
   if [ -d ej??1.?.?_?? ] ; then
