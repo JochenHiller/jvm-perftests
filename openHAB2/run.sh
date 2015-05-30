@@ -12,6 +12,7 @@ echo "Test running at `date`" >>$TEST_RESULT_FILE
 uname -a >>$TEST_RESULT_FILE
 if [ `uname` == Linux ] ; then
   cat /proc/cpuinfo >>$TEST_RESULT_FILE
+  echo "See http://www.raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/ for hardware revision" >>$TEST_RESULT_FILE
 fi
 if [ `uname` == Darwin ] ; then
   sysctl -n machdep.cpu.brand_string >>$TEST_RESULT_FILE
@@ -22,7 +23,7 @@ $JAVA_HOME/bin/java -version 2>>$TEST_RESULT_FILE
 
 
 # repeat test N times
-NO_OF_RUNS=5
+NO_OF_RUNS=1
 RUN=1
 echo "Making $NO_OF_RUNS runs" >>$TEST_RESULT_FILE
 while [ $RUN -le $NO_OF_RUNS ] ; do

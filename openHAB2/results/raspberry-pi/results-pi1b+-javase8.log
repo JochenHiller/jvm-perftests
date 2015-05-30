@@ -1,0 +1,24 @@
+Test running at Sat May 30 13:22:43 UTC 2015
+Linux raspberrypi 3.18.11+ #781 PREEMPT Tue Apr 21 18:02:18 BST 2015 armv6l GNU/Linux
+processor	: 0
+model name	: ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS	: 2.00
+Features	: half thumb fastmult vfp edsp java tls
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xb76
+CPU revision	: 7
+
+Hardware	: BCM2708
+Revision	: 0010
+Serial		: 000000007fc474ea
+java version "1.8.0"
+Java(TM) SE Runtime Environment (build 1.8.0-b132)
+Java HotSpot(TM) Client VM (build 25.0-b70, mixed mode)
+Making 5 runs
+Startup took 192918 ms
+Startup took 206429 ms
+Startup took 207509 ms
+Startup took 186030 ms
+Startup took 195512 ms

@@ -7,6 +7,8 @@ These results have been measured until now.
 | Date/User | OS/JavaVM | Startup time | Results |
 | --------- | --------- | ----- | ------- |
 | 2015-05-30/jochenhiller | mac (JavaSE 6/7/8, client/server) | 13-14 sec | [./results/mac](./results/mac) |
+| 2015-05-30/jochenhiller | Rasp Pi 1 B/B+ | 190-200 sec | [./results/raspberry-pi](./results/raspberry-pi) |
+| 2015-05-30/jochenhiller | Rasp Pi 2 | 95-110 sec | [./results/raspberry-pi](./results/raspberry-pi) |
 
 
 ## Run the tests
@@ -20,8 +22,7 @@ curl -s -o benchmark.sh https://raw.githubusercontent.com/JochenHiller/jvm-perft
 chmod u+x *.sh
 # adapt benchmark.sh to your environment, then run the benchmarks
 # adapt means:
-#   set JAVA_HOME
-#   adapt memory settings, number of runs
+#   set JVMS to your JavaVMs to test
 ./benchmark.sh
 # see results at ./openHAB2-results
 ```
