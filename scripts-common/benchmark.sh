@@ -3,7 +3,7 @@
 rm -f console.log
 
 (
-echo "Run SPECjvm2008 benchmarks..."
+echo "Run benchmarks..."
 
 ./install.sh
 
