@@ -36,9 +36,13 @@ for jvm in ../JavaVMs/*.gz ; do
   # for JavaSE Embedded 7
   if [ -f ../JavaVMs-Installed/$full_jre_name/bin/java ] ; then
     echo "Checking Java version: "
-    echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
-    echo "See also https://community.oracle.com/thread/2473836"
     ../JavaVMs-Installed/$full_jre_name/bin/java -version
+    rc=$?
+    if [ $rc != 0 ] ; then
+      echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
+      echo "See also https://community.oracle.com/thread/2473836"
+      echo "An error like ./java: can not execute binary ... indicates that you are running on wron platform"
+    fi
   fi
   
   # for JavaSE Embedded 8
@@ -51,9 +55,13 @@ for jvm in ../JavaVMs/*.gz ; do
       --extension sunpkcs11,gcf,locales,charsets,nashorn,sunec \
       --dest ../JavaVMs-Installed/$full_jre_name-jre-full
     echo "Checking Java version: "
-    echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
-    echo "See also https://community.oracle.com/thread/2473836"
     ../JavaVMs-Installed/$full_jre_name-jre-full/bin/java -version
+    rc=$?
+    if [ $rc != 0 ] ; then
+      echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
+      echo "See also https://community.oracle.com/thread/2473836"
+      echo "An error like ./java: can not execute binary ... indicates that you are running on wron platform"
+    fi
   fi
 
 done
