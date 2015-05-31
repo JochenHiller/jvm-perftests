@@ -55,6 +55,8 @@ for jvm in ../JavaVMs/*.gz ; do
     # set JAVA_HOME temporary to be able to load shared libraries too
     (
     echo "Checking Java version: "
+    echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
+    echo "See also https://community.oracle.com/thread/2473836"
     export JAVA_HOME=../JavaVMs-Installed/$full_jre_name-jre-full
     $JAVA_HOME/bin/java -version
     )
@@ -62,6 +64,7 @@ for jvm in ../JavaVMs/*.gz ; do
 
 done
 
+cd ..
 ls -al JavaVMs-Installed
 
 

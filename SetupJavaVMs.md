@@ -14,6 +14,8 @@ scp JavaVMs/* pi@<ip>:/home/pi/jvm-perftest/JavaVMs
 
 There is a helper script to install all JavaVM in folder ./JavaVMs on target platform. Set JAVA_HOME to an existing installation of JavaSE 7 or 8 (will be needed to create jre-full profile).
 
+Sample for Raspberry Pi:
+
 ```
 export JAVA_HOME=/usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt
 curl -s -o install-jvms.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/scripts-common/install-jvms.sh
