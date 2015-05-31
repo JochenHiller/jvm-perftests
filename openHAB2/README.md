@@ -6,10 +6,14 @@ These results have been measured until now.
 
 | Date/User | OS/JavaVM | Startup time | Results |
 | --------- | --------- | ----- | ------- |
-| 2015-05-30/jochenhiller | mac (JavaSE 6/7/8, client/server) | 13-14 sec | [./results/mac](./results/mac) |
+| 2015-05-30/jochenhiller | Mac (JavaSE 6/7/8, client/server) | 13-14 sec | [./results/mac](./results/mac) |
 | 2015-05-30/jochenhiller | Rasp Pi 1 B/B+ | 190-200 sec | [./results/raspberry-pi](./results/raspberry-pi) |
-| 2015-05-30/jochenhiller | Rasp Pi 2 | 95-110 sec | [./results/raspberry-pi](./results/raspberry-pi) |
+| 2015-05-30/jochenhiller | Rasp Pi 2 | 75-110 sec | [./results/raspberry-pi](./results/raspberry-pi) |
 
+## Details
+
+This benchmark will simply start openHAB2 with some standard add-on bundles. It will measure until openHAB2 is up and running.
+This is not a thorough test but give some good indicators of running openHAB2 on different JavaVMs in embedded environments.
 
 ## Run the tests
 
@@ -21,16 +25,10 @@ curl -s -o run.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/m
 curl -s -o benchmark.sh https://raw.githubusercontent.com/JochenHiller/jvm-perftests/master/scripts-common/benchmark.sh
 chmod u+x *.sh
 # adapt benchmark.sh to your environment, then run the benchmarks
-# adapt means:
 #   set JVMS to your JavaVMs to test
 ./benchmark.sh
 # see results at ./openHAB2-results
 ```
-
-## Details
-
-This will simply start openHAB2 with some standard add-on bundles. It will until openHAB2 is up and running.
-This is not a thorough test but give some good indicators of running openHAB2 on different JavaVMs in embedded environments.
 
 ## References
 
