@@ -32,7 +32,6 @@ These JavaVMs are successfully running on Raspberry Pi. Soft-Floating versions a
 
 ```
 ejdk-8u33-fcs-linux-armv6-vfp-hflt.gz
-ejdk-8u33-fcs-linux-i586.gz
 jdk-8u33-linux-arm-vfp-hflt.gz
 ejre-7u75-fcs-b13-linux-arm-vfp-hflt-client_headless-18_dec_2014.gz
 ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18_dec_2014.gz

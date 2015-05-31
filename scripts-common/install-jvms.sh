@@ -35,12 +35,10 @@ for jvm in ../JavaVMs/*.gz ; do
   
   # for JavaSE Embedded 7
   if [ -f ../JavaVMs-Installed/$full_jre_name/bin/java ] ; then
-    # set JAVA_HOME temporary to be able to load shared libraries too
-    (
     echo "Checking Java version: "
-    export JAVA_HOME=../JavaVMs-Installed/$full_jre_name
-    $JAVA_HOME/bin/java -version
-    )
+    echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
+    echo "See also https://community.oracle.com/thread/2473836"
+    ../JavaVMs-Installed/$full_jre_name/bin/java -version
   fi
   
   # for JavaSE Embedded 8
@@ -52,14 +50,10 @@ for jvm in ../JavaVMs/*.gz ; do
       --vm all --debug --verbose \
       --extension sunpkcs11,gcf,locales,charsets,nashorn,sunec \
       --dest ../JavaVMs-Installed/$full_jre_name-jre-full
-    # set JAVA_HOME temporary to be able to load shared libraries too
-    (
     echo "Checking Java version: "
     echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
     echo "See also https://community.oracle.com/thread/2473836"
-    export JAVA_HOME=../JavaVMs-Installed/$full_jre_name-jre-full
-    $JAVA_HOME/bin/java -version
-    )
+    ../JavaVMs-Installed/$full_jre_name-jre-full/bin/java -version
   fi
 
 done
