@@ -17,8 +17,12 @@ if [ $target_host == "jhillers-MBP" ] ; then
 /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home"
     
 elif [ $target_host == "raspberrypi" ] ; then
+  # assume that the JavaVMs are installed ./JavaVMs-Installed
+  __cwd=`pwd`
   JVMS="
 /usr/lib/jvm/jdk-8-oracle-arm-vfp-hflt \
+$__cwd/JavaVMs-Installed/ejdk-8u33-fcs-linux-arm-sflt-jre-full \
+$__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18_dec_2014 \
 /usr/lib/jvm/java-7-openjdk-armhf \
 /usr/lib/jvm/java-1.5.0-gcj-4.7 \
 /usr/lib/jvm/java-6-openjdk-armhf"

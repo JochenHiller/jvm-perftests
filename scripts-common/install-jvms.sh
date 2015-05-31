@@ -35,19 +35,28 @@ for jvm in ../JavaVMs/*.gz ; do
   
   # for JavaSE Embedded 7
   if [ -f ../JavaVMs-Installed/$full_jre_name/bin/java ] ; then
+    # set JAVA_HOME temporary to be able to load shared libraries too
+    (
     echo "Checking Java version: "
-    ../JavaVMs-Installed/$full_jre_name/bin/java -version
+    export JAVA_HOME=../JavaVMs-Installed/$full_jre_name
+    $JAVA_HOME/bin/java -version
+    )
   fi
   
   # for JavaSE Embedded 8
   # create a JRE full, with all extensions
   if [ -f ../JavaVMs-Installed/$full_jre_name/bin/jrecreate.sh ] ; then
     echo "JavaSE-8-Embedded: Creating full-jre profile..."
+    # with debugging, verbose whats happening
     ../JavaVMs-Installed/$full_jre_name/bin/jrecreate.sh \
-      --dest ../JavaVMs-Installed/$full_jre_name-jre-full \
-      --vm all --extension sunpkcs11,gcf,locales,charsets,nashorn,sunec
+      --vm all --debug --verbose \
+      --extension sunpkcs11,gcf,locales,charsets,nashorn,sunec \
+      --dest ../JavaVMs-Installed/$full_jre_name-jre-full
   fi
 
 done
+
+ls -al JavaVMs-Installed
+
 
 ) 2>&1 | tee console.log
