@@ -5,7 +5,7 @@ echo "Running openHAB2 for Java $JAVA_HOME"
 TEST_RESULT_DIR=./openHAB2-results/TEST-RESULT-`date "+%Y%m%d-%H%M%S"`
 TEST_RESULT_FILE=$TEST_RESULT_DIR/results.log
 
-rm -f $TEST_RESULT_FILE
+rm -rf $TEST_RESULT_DIR
 if [ ! -d $TEST_RESULT_DIR ] ; then mkdir -p $TEST_RESULT_DIR ; fi
 
 echo "Test running at `date`" >>$TEST_RESULT_FILE
@@ -36,7 +36,7 @@ while [ $RUN -le $NO_OF_RUNS ] ; do
   unzip -q ../openhab-2.0.0.alpha2-demo.zip
 
   ./start_debug.sh 2>&1 >openhab-console.log &
-  openHAB2_PID=$!
+  openHAB2_pid=$!
 
   # wait until openHAB2 has been started
   while [ true ] ; do
@@ -49,9 +49,9 @@ while [ $RUN -le $NO_OF_RUNS ] ; do
   grep "Startup took" openhab-console.log | sed -e 's/^.*Startup took/Startup took/g'
 
   # now finish java
-  java_PID=`pgrep -P $openHAB2_PID java`
+  java_pid=`pgrep -P $openHAB2_pid java`
   echo "Killing running java..."
-  kill -9 $java_PID
+  kill -9 $java_pid
   # allow java to quit and free files
   sleep 5 
   mv openhab-console.log ../$TEST_RESULT_DIR/openhab-console-$RUN.log
