@@ -41,7 +41,8 @@ for jvm in ../JavaVMs/*.gz ; do
     if [ $rc != 0 ] ; then
       echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
       echo "See also https://community.oracle.com/thread/2473836"
-      echo "An error like ./java: can not execute binary ... indicates that you are running on wron platform"
+      echo "An error like ./java: /lib/ld-linux-armhf.so.3: bad ELF interpreter: No such file or directory ... indicates that you have wrong VM used here"
+      echo "An error like ./java: can not execute binary ... indicates that you are running on wrong platform"
     fi
   fi
   
@@ -60,7 +61,8 @@ for jvm in ../JavaVMs/*.gz ; do
     if [ $rc != 0 ] ; then
       echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
       echo "See also https://community.oracle.com/thread/2473836"
-      echo "An error like ./java: can not execute binary ... indicates that you are running on wron platform"
+      echo "An error like ./java: /lib/ld-linux-armhf.so.3: bad ELF interpreter: No such file or directory ... indicates that you have wrong VM used here"
+      echo "An error like ./java: can not execute binary ... indicates that you are running on wrong platform"
     fi
   fi
 
