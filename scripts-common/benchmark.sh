@@ -10,6 +10,8 @@ echo "Run benchmarks..."
 # adapt to your own settings
 
 target_host=`hostname -s`
+uname_long=`uname -a`
+
 if [ $target_host == "jhillers-MBP" ] ; then
   JVMS="
 /Library/Java/JavaVirtualMachines/1.6.0_37-b06-434.jdk/Contents/Home \
@@ -26,6 +28,15 @@ $__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18
 /usr/lib/jvm/java-7-openjdk-armhf \
 /usr/lib/jvm/java-1.5.0-gcj-4.7 \
 /usr/lib/jvm/java-6-openjdk-armhf"
+
+elif [ $uname_long == *"2.6.34.15-WR4.3.0.0_standard"* ]
+  # assume that the JavaVMs are installed ./JavaVMs-Installed
+  __cwd=`pwd`
+  JVMS="
+/usr/lib/javaSE \
+$__cwd/JavaVMs-Installed/ejdk-8u33-fcs-linux-arm-sflt-jre-full \
+$__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18_dec_2014"
+
 else
   echo "Define your configuration first here"
   JVMS=""
