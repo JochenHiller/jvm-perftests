@@ -45,6 +45,13 @@ for jvm in ../JavaVMs/*.gz ; do
       echo "An error like  Server VM is only supported on ARMv7+ VFP ... indicates that server option is not supported on your platform"
       echo "An error like ./java: can not execute binary ... indicates that you are running on wrong platform"
     fi
+    # install Unlimited JCE policies of zip is available
+    if [ -f ./JavaVMs/UnlimitedJCEPolicyJDK7.zip ] ; then
+      # unzip into lib/security, only jar files
+      echo "Using UnlimitedJCEPolicies from ./JavaVMsUnlimitedJCEPolicyJDK7 ..."
+      unzip -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
+        ./JavaVMs/UnlimitedJCEPolicyJDK7  *.jar
+    fi
   fi
   
   # for JavaSE Embedded 8
@@ -52,8 +59,9 @@ for jvm in ../JavaVMs/*.gz ; do
   if [ -f ../JavaVMs-Installed/$full_jre_name/bin/jrecreate.sh ] ; then
     echo "JavaSE-8-Embedded: Creating full-jre profile..."
     # with debugging, verbose whats happening
+    # add --verbose if more info needed
     ../JavaVMs-Installed/$full_jre_name/bin/jrecreate.sh \
-      --vm all --debug --verbose \
+      --vm all --debug \
       --extension sunpkcs11,gcf,locales,charsets,nashorn,sunec \
       --dest ../JavaVMs-Installed/$full_jre_name-jre-full
     echo "Checking Java version: "
@@ -65,6 +73,13 @@ for jvm in ../JavaVMs/*.gz ; do
       echo "An error like ./java: /lib/ld-linux-armhf.so.3: bad ELF interpreter: No such file or directory ... indicates that you have wrong VM used here"
       echo "An error like  Server VM is only supported on ARMv7+ VFP ... indicates that server option is not supported on your platform"
       echo "An error like ./java: can not execute binary ... indicates that you are running on wrong platform"
+    fi
+    # install Unlimited JCE policies of zip is available
+    if [ -f ./JavaVMs/jce_policy-8.zip ] ; then
+      # unzip into lib/security, only jar files
+      echo "Using UnlimitedJCEPolicies from ./JavaVMs/jce_policy-8.zip ..."
+      unzip -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
+        ./JavaVMs/jce_policy-8.zip  *.jar
     fi
   fi
 

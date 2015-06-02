@@ -31,15 +31,12 @@ $__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18
 
 # special notation for string contains string when running in busybox
 elif [ -z "${uname_long##*-WR4.3.0.0*}" ] ; then
-
-2.6.34.15-WR4.3.0.0_standard
-
   # assume that the JavaVMs are installed ./JavaVMs-Installed
   __cwd=`pwd`
   JVMS="
 /usr/lib/javaSE \
 $__cwd/JavaVMs-Installed/ejdk-8u33-fcs-linux-arm-sflt-jre-full \
-$__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18_dec_2014"
+$__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-sflt-client_headless-18_dec_2014"
 
 else
   echo "Define your configuration first here"
