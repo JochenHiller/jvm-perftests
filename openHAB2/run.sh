@@ -35,6 +35,8 @@ while [ $RUN -le $NO_OF_RUNS ] ; do
   pushd openHAB2 >/dev/null
   unzip -q ../openhab-2.0.0.alpha2-demo.zip
 
+  # export JAVA_HOME/bin to PATH
+  export PATH=$JAVA_HOME/bin:$PATH
   ./start_debug.sh 2>&1 >openhab-console.log &
   openHAB2_pid=$!
 
