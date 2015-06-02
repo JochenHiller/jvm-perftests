@@ -29,7 +29,7 @@ $__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18
 /usr/lib/jvm/java-1.5.0-gcj-4.7 \
 /usr/lib/jvm/java-6-openjdk-armhf"
 
-elif [ $uname_long == *"2.6.34.15-WR4.3.0.0_standard"* ]
+elif [ $uname_long == *"2.6.34.15-WR4.3.0.0_standard"* ] ; then
   # assume that the JavaVMs are installed ./JavaVMs-Installed
   __cwd=`pwd`
   JVMS="
