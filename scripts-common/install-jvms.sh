@@ -24,6 +24,8 @@ for jvm in ../JavaVMs/*.gz ; do
   ZCAT_COMMAND=zcat
   if [ `uname` == Darwin ] ; then ZCAT_COMMAND=gzcat ; fi
   $ZCAT_COMMAND $jvm | tar xf -
+  echo " "
+  echo " "
   echo "Installed JavaVMs-Installed/$full_jre_name"
   # rename default folder to specific VM name, do that for ejre, ejdk, jdk
   if [ -d ej??1.?.?_?? ] ; then
@@ -35,6 +37,13 @@ for jvm in ../JavaVMs/*.gz ; do
   
   # for JavaSE Embedded 7
   if [ -f ../JavaVMs-Installed/$full_jre_name/bin/java ] ; then
+    # install Unlimited JCE policies of zip is available
+    if [ -f ../JavaVMs/UnlimitedJCEPolicyJDK7.zip ] ; then
+      # unzip into lib/security, only jar files
+      echo "Using UnlimitedJCEPolicies from ./JavaVMsUnlimitedJCEPolicyJDK7 ..."
+      unzip -o -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
+        ../JavaVMs/UnlimitedJCEPolicyJDK7.zip  *.jar
+    fi
     echo "Checking Java version: "
     ../JavaVMs-Installed/$full_jre_name/bin/java -version
     rc=$?
@@ -44,13 +53,6 @@ for jvm in ../JavaVMs/*.gz ; do
       echo "An error like ./java: /lib/ld-linux-armhf.so.3: bad ELF interpreter: No such file or directory ... indicates that you have wrong VM used here"
       echo "An error like  Server VM is only supported on ARMv7+ VFP ... indicates that server option is not supported on your platform"
       echo "An error like ./java: can not execute binary ... indicates that you are running on wrong platform"
-    fi
-    # install Unlimited JCE policies of zip is available
-    if [ -f ./JavaVMs/UnlimitedJCEPolicyJDK7.zip ] ; then
-      # unzip into lib/security, only jar files
-      echo "Using UnlimitedJCEPolicies from ./JavaVMsUnlimitedJCEPolicyJDK7 ..."
-      unzip -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
-        ./JavaVMs/UnlimitedJCEPolicyJDK7  *.jar
     fi
   fi
   
@@ -64,6 +66,13 @@ for jvm in ../JavaVMs/*.gz ; do
       --vm all --debug \
       --extension sunpkcs11,gcf,locales,charsets,nashorn,sunec \
       --dest ../JavaVMs-Installed/$full_jre_name-jre-full
+    # install Unlimited JCE policies of zip is available
+    if [ -f ../JavaVMs/jce_policy-8.zip ] ; then
+      # unzip into lib/security, only jar files
+      echo "Using UnlimitedJCEPolicies from ./JavaVMs/jce_policy-8.zip ..."
+      unzip -o -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
+        ../JavaVMs/jce_policy-8.zip  *.jar
+    fi
     echo "Checking Java version: "
     ../JavaVMs-Installed/$full_jre_name-jre-full/bin/java -version
     rc=$?
@@ -73,13 +82,6 @@ for jvm in ../JavaVMs/*.gz ; do
       echo "An error like ./java: /lib/ld-linux-armhf.so.3: bad ELF interpreter: No such file or directory ... indicates that you have wrong VM used here"
       echo "An error like  Server VM is only supported on ARMv7+ VFP ... indicates that server option is not supported on your platform"
       echo "An error like ./java: can not execute binary ... indicates that you are running on wrong platform"
-    fi
-    # install Unlimited JCE policies of zip is available
-    if [ -f ./JavaVMs/jce_policy-8.zip ] ; then
-      # unzip into lib/security, only jar files
-      echo "Using UnlimitedJCEPolicies from ./JavaVMs/jce_policy-8.zip ..."
-      unzip -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
-        ./JavaVMs/jce_policy-8.zip  *.jar
     fi
   fi
 

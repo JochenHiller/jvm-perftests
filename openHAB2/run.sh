@@ -12,7 +12,9 @@ echo "Test running at `date`" >>$TEST_RESULT_FILE
 uname -a >>$TEST_RESULT_FILE
 if [ `uname` == Linux ] ; then
   cat /proc/cpuinfo >>$TEST_RESULT_FILE
-  echo "See http://www.raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/ for hardware revision" >>$TEST_RESULT_FILE
+  if [ `hostname -s` == "raspberrypi" ] ; then
+    echo "See http://www.raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/ for hardware revision" >>$TEST_RESULT_FILE
+  fi
 fi
 if [ `uname` == Darwin ] ; then
   sysctl -n machdep.cpu.brand_string >>$TEST_RESULT_FILE
