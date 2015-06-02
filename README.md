@@ -46,6 +46,8 @@ See [./SPECjvm2008/README.md](./SPECjvm2008/README.md)
 * Article about JMH (german): http://www.heise.de/developer/artikel/JMH-Microbenchmarking-auf-der-Java-Virtual-Machine-2162093.html
 * Java Microbenchmarking Harness (JMH): http://openjdk.java.net/projects/code-tools/jmh/
 
+* ARM CPU types: see YouTube Video at https://www.youtube.com/watch?t=355&v=adrZDsRXmq4
+
 ## Open Issues
 
 * Run tests and collection results on

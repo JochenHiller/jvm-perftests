@@ -4,6 +4,11 @@
 
 Get one or more JavaSE Embedded 7 or 8 versions from http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html. This needs license agreement and login to Oracle Network. Copy the archive file(s) to a folder named "./JavaVMs".
 
+If you want to install the Unlimited JCE Policies, download them also from 
+* UnlimitedJCEPolicyJDK7.zip: http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html
+* jce_policy-8.zip: http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html
+and put them into ./JavaVMs folder.
+
 Copy the folder ./JavaVMs to you target platform, e.g. Raspberry Pi.
 
 ```
@@ -25,6 +30,7 @@ chmod u+x *.sh
 
 For JavaSE Embedded 7 the archive file will simply be unpacked.
 For JavaSE Embedded 8 the archive file will be unpacked. The jrecreate.sh will be used to create a full-jre profile. The install folder will be the name of the VM extended by "-jre-full".
+If ZIP files present, the Unlimited JCE Policies will be installed into ../lib/security and will replace the original ones.
 
 ## JavaVMs supported on Raspberry Pi
 
@@ -40,3 +46,10 @@ ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18_dec_2014.gz
 ## Use in benchmark tests
 
 You can adapt the benchmark.sh to include all JVMs you want to test.
+
+
+## References
+
+* http://stackoverflow.com/questions/19856324/exception-in-thread-main-java-security-invalidkeyexception-illegal-key-size-o
+* http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html
+* http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html
