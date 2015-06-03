@@ -1,4 +1,4 @@
-Test running at Tue Jun  2 19:49:46 CEST 2015
+Test running at Tue Jun  2 22:24:58 CEST 2015
 Linux qivicon 2.6.34.15-WR4.3.0.0_standard #3 PREEMPT Fri Jan 30 15:31:52 JST 2015 armv6l armv6l armv6l GNU/Linux
 Processor	: ARMv6-compatible processor rev 4 (v6l)
 BogoMIPS	: 239.20
@@ -12,10 +12,12 @@ CPU revision	: 4
 Hardware	: Cavium Networks CNS3420 Validation Board
 Revision	: 0000
 Serial		: 0000000000000000
-See http://www.raspberrypi-spy.co.uk/2012/09/checking-your-raspberry-pi-board-version/ for hardware revision
 java version "1.8.0_33"
 Java(TM) SE Embedded Runtime Environment (build 1.8.0_33-b05, headless)
 Java HotSpot(TM) Embedded Client VM (build 25.33-b05, mixed mode)
-Making 1 runs
-Startup took 220560 ms
-
+Making 5 runs
+Startup took 214200 ms
+Startup took 214620 ms
+Startup took 224050 ms
+Startup took 219530 ms
+Startup took 211870 ms
