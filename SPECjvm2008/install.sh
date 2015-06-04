@@ -7,9 +7,7 @@ echo "Installing SPECjvm2008..."
 # so install on another host
 if [ -f specjvm2008.tar.gz ] ; then
   echo "Unpacking pre-installed version of SPECjvm2008..."
-  zcat specjvm2008.tar.gz | tar xvf -
-  exit 1
-
+  zcat specjvm2008.tar.gz | tar xf -
 
 else 
 
