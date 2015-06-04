@@ -42,7 +42,7 @@ for jvm in ../JavaVMs/*.gz ; do
     if [ -f ../JavaVMs/UnlimitedJCEPolicyJDK7.zip ] ; then
       # unzip into lib/security, only jar files
       echo "Using UnlimitedJCEPolicies from ./JavaVMsUnlimitedJCEPolicyJDK7 ..."
-      unzip -o -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
+      unzip -o -d ../JavaVMs-Installed/$full_jre_name/lib/security -j \
         ../JavaVMs/UnlimitedJCEPolicyJDK7.zip  *.jar
     fi
     echo "Checking Java version: "
