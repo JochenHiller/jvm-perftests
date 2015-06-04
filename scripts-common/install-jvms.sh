@@ -15,7 +15,8 @@ fi
 
 
 ls -al JavaVMs
-mkdir -p JavaVMs-Installed
+rm -rf ./JavaVMs-Installed
+mkdir -p ./JavaVMs-Installed
 cd JavaVMs-Installed
 
 for jvm in ../JavaVMs/*.gz ; do
