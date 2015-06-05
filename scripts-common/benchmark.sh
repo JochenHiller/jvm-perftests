@@ -32,7 +32,7 @@ $__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18
 # special notation for string contains string when running in busybox
 elif [ -z "${uname_long##*-WR4.3.0.0*}" ] ; then
   # assume that the JavaVMs are installed ./JavaVMs-Installed
-  __cwd=`pwd`
+  __cwd=/osgi/cache/jvm-perftest
   JVMS="
 /usr/lib/javaSE \
 $__cwd/JavaVMs-Installed/ejdk-8u33-fcs-linux-arm-sflt-jre-full \
