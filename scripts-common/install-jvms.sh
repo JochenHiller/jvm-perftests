@@ -8,12 +8,6 @@ rm -f console.log
 echo "Installing JavaVMs..."
 echo "Assuming all downloaded files at ./JavaVMs, install into ./JavaVMs-Installed"
 
-if [ -z $JAVA_HOME ] ; then
-  echo "Set JAVA_HOME first to create JavaSE 8 profiles!"
-  exit 1
-fi
-
-
 ls -al JavaVMs
 rm -rf ./JavaVMs-Installed
 mkdir -p ./JavaVMs-Installed
@@ -37,7 +31,7 @@ for jvm in ../JavaVMs/*.gz ; do
   fi
   
   # for JavaSE Embedded 7
-  if [ -f ../JavaVMs-Installed/$full_jre_name/bin/java ] ; then
+  if [ -z "${full_jre_name##ejre-7*}" ] ; then
     # install Unlimited JCE policies of zip is available
     if [ -f ../JavaVMs/UnlimitedJCEPolicyJDK7.zip ] ; then
       # unzip into lib/security, only jar files
@@ -57,9 +51,36 @@ for jvm in ../JavaVMs/*.gz ; do
     fi
   fi
   
-  # for JavaSE Embedded 8
+  # for JavaSE Embedded 8 pre-installed
+  # special notation for string contains string when running in busybox
+  if [    -z "${full_jre_name##ejdk-8*}" \
+       -a -z "${full_jre_name##*jre-full}" ] ; then
+    # install Unlimited JCE policies of zip is available
+    if [ -f ../JavaVMs/jce_policy-8.zip ] ; then
+      # unzip into lib/security, only jar files
+      echo "Using UnlimitedJCEPolicies from ./JavaVMs/jce_policy-8.zip ..."
+      unzip -o -d ../JavaVMs-Installed/$full_jre_name-jre-full/lib/security -j \
+        ../JavaVMs/jce_policy-8.zip  *.jar
+    fi
+    echo "Checking Java version: "
+    ../JavaVMs-Installed/$full_jre_name/bin/java -version
+    rc=$?
+    if [ $rc != 0 ] ; then
+      echo "An error like ./java: error while loading shared libraries: libjli.so: ... indicates that you have wrong VM used here"
+      echo "See also https://community.oracle.com/thread/2473836"
+      echo "An error like ./java: /lib/ld-linux-armhf.so.3: bad ELF interpreter: No such file or directory ... indicates that you have wrong VM used here"
+      echo "An error like  Server VM is only supported on ARMv7+ VFP ... indicates that server option is not supported on your platform"
+      echo "An error like ./java: can not execute binary ... indicates that you are running on wrong platform"
+    fi
+  fi
+  
+  # for JavaSE Embedded 8, not pre-installed
   # create a JRE full, with all extensions
   if [ -f ../JavaVMs-Installed/$full_jre_name/bin/jrecreate.sh ] ; then
+    if [ -z $JAVA_HOME ] ; then
+      echo "Set JAVA_HOME first to create JavaSE 8 profiles!"
+      exit 1
+    fi
     echo "JavaSE-8-Embedded: Creating full-jre profile..."
     # with debugging, verbose whats happening
     # add --verbose if more info needed

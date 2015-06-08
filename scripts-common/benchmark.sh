@@ -34,9 +34,11 @@ elif [ -z "${uname_long##*-WR4.3.0.0*}" ] ; then
   # assume that the JavaVMs are installed ./JavaVMs-Installed
   __cwd=/osgi/cache/jvm-perftest
   JVMS="
-/usr/lib/javaSE \
 $__cwd/JavaVMs-Installed/ejdk-8u33-fcs-linux-arm-sflt-jre-full \
+/usr/lib/javaSE \
 $__cwd/JavaVMs-Installed/ejre-7u75-fcs-b13-linux-arm-vfp-sflt-client_headless-18_dec_2014"
+
+
 
 else
   echo "Define your configuration first here"

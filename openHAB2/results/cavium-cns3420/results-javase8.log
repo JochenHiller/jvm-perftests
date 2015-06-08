@@ -1,4 +1,4 @@
-Test running at Tue Jun  2 22:24:58 CEST 2015
+Test running at Fri Jun  5 09:18:59 CEST 2015
 Linux qivicon 2.6.34.15-WR4.3.0.0_standard #3 PREEMPT Fri Jan 30 15:31:52 JST 2015 armv6l armv6l armv6l GNU/Linux
 Processor	: ARMv6-compatible processor rev 4 (v6l)
 BogoMIPS	: 239.20
@@ -15,6 +15,12 @@ Serial		: 0000000000000000
 java version "1.8.0_33"
 Java(TM) SE Embedded Runtime Environment (build 1.8.0_33-b05, headless)
 Java HotSpot(TM) Embedded Client VM (build 25.33-b05, mixed mode)
+Making 5 runs
+Startup took 218140 ms
+Startup took 229330 ms
+Startup took 223700 ms
+Startup took 218440 ms
+Startup took 218970 ms
 Making 5 runs
 Startup took 214200 ms
 Startup took 214620 ms

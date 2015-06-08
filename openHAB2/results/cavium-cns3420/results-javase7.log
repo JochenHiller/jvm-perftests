@@ -1,4 +1,4 @@
-Test running at Tue Jun  2 22:06:00 CEST 2015
+Test running at Fri Jun  5 09:00:04 CEST 2015
 Linux qivicon 2.6.34.15-WR4.3.0.0_standard #3 PREEMPT Fri Jan 30 15:31:52 JST 2015 armv6l armv6l armv6l GNU/Linux
 Processor	: ARMv6-compatible processor rev 4 (v6l)
 BogoMIPS	: 239.20
@@ -16,6 +16,12 @@ java version "1.7.0_71"
 Java(TM) SE Embedded Runtime Environment (build 1.7.0_71-b14, headless)
 Java HotSpot(TM) Embedded Client VM (build 24.71-b01, mixed mode)
 Making 5 runs
+Startup took 201280 ms
+Startup took 204400 ms
+Startup took 209683 ms
+Startup took 200976 ms
+Startup took 202590 ms
+Making 5 runs
 Startup took 202980 ms
 Startup took 201130 ms
 Startup took 201710 ms
@@ -23,7 +29,8 @@ Startup took 204590 ms
 Startup took 206150 ms
 
 
-Test running at Tue Jun  2 22:44:57 CEST 2015
+
+Test running at Fri Jun  5 09:39:20 CEST 2015
 Linux qivicon 2.6.34.15-WR4.3.0.0_standard #3 PREEMPT Fri Jan 30 15:31:52 JST 2015 armv6l armv6l armv6l GNU/Linux
 Processor	: ARMv6-compatible processor rev 4 (v6l)
 BogoMIPS	: 239.20
@@ -41,9 +48,15 @@ java version "1.7.0_75"
 Java(TM) SE Embedded Runtime Environment (build 1.7.0_75-b13, headless)
 Java HotSpot(TM) Embedded Client VM (build 24.75-b04, mixed mode)
 Making 5 runs
+Startup took 206430 ms
+Startup took 207310 ms
+Startup took 205260 ms
+Startup took 202790 ms
+Startup took 205640 ms
+Making 5 runs
 Startup took 202060 ms
 Startup took 202840 ms
 Startup took 196610 ms
 Startup took 198080 ms
 Startup took 204650 ms
--sh-3.2#
+
