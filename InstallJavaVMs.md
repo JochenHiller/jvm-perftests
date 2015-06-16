@@ -37,9 +37,11 @@ If ZIP files present, the Unlimited JCE Policies will be installed into `../lib/
 ## JavaVMs supported on Raspberry Pi
 
 These JavaVMs are successfully running on Raspberry Pi. Soft-Floating versions are NOT supported due to missing OS support. See also https://community.oracle.com/thread/2473836.
+You can use pre-installed versions of jre-full version to minimize installation time on embedded device.
+
 
 ```
-ejdk-8u33-fcs-linux-armv6-vfp-hflt.gz
+ejdk-8u33-fcs-linux-armv6-vfp-hflt-jre-full.gz
 jdk-8u33-linux-arm-vfp-hflt.gz
 ejre-7u75-fcs-b13-linux-arm-vfp-hflt-client_headless-18_dec_2014.gz
 ejre-7u75-fcs-b13-linux-arm-vfp-hflt-server_headless-18_dec_2014.gz
