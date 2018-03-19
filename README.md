@@ -29,6 +29,11 @@ Available micro benchmarks found:
 * Caliper: https://code.google.com/p/caliper/
 * Java Microbenchmarking Harness (JMH): http://openjdk.java.net/projects/code-tools/jmh/
 
+### Caliper from Google
+
+For Caliper: see [Caliper.md)(.Caliper.md) how to setup and run benchmark tests.
+
+
 ## Running tests with SPECjvm2008
 
 See [./SPECjvm2008/README.md](./SPECjvm2008/README.md)
