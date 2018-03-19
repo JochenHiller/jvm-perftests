@@ -31,7 +31,7 @@ Available micro benchmarks found:
 
 ### Caliper from Google
 
-For Caliper: see [Caliper.md)(.Caliper.md) how to setup and run benchmark tests.
+For Caliper: see [Caliper.md](./Caliper.md) how to setup and run benchmark tests.
 
 
 ## Running tests with SPECjvm2008
